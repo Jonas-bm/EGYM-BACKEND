@@ -22,4 +22,14 @@ public class EntrenadorServiceImplement implements IEntrenadorService {
    public List<Entrenador> list() {
       return eR.findAll();
    }
+
+   @Override
+   public void delete(int idEntrenador) {
+      eR.deleteById(idEntrenador);
+   }
+
+   @Override
+   public Entrenador listId(int idEntrenador) {
+      return eR.findById(idEntrenador).orElse(new Entrenador());
+   }
 }

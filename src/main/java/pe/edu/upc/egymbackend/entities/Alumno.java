@@ -18,7 +18,7 @@ public class Alumno {
     @Column(name = "apellidoMaterno",length = 60,nullable = false)
     private String apellidoMaterno;
     @Column(name="dniAlumno",length = 8,nullable = false)
-    private int dniAlumno;
+    private String dniAlumno;
     @Column(name = "direccionAlumno",length = 100,nullable = false)
     private String direccionAlumno;
     @Column(name = "celularAlumno",length = 9,nullable = false)
@@ -26,14 +26,14 @@ public class Alumno {
     @Column(name="fechaNacimiento")
     private LocalDate fechaNacimiento;
     @Column(name = "pesoAlumno",length = 10,nullable = false)
-    private int pesoAlumno;
+    private Double pesoAlumno;
     @Column(name = "tallaAlumno",length = 10,nullable = false)
-    private int tallaAlumno;
+    private Double tallaAlumno;
 
     public Alumno() {
     }
 
-    public Alumno(int idAlumno, String nombreAlumno, String apellidoPaterno, String apellidoMaterno, int dniAlumno, String direccionAlumno, String celularAlumno, LocalDate fechaNacimiento, int pesoAlumno, int tallaAlumno) {
+    public Alumno(int idAlumno, String nombreAlumno, String apellidoPaterno, String apellidoMaterno, String dniAlumno, String direccionAlumno, String celularAlumno, LocalDate fechaNacimiento, Double pesoAlumno, Double tallaAlumno) {
         this.idAlumno = idAlumno;
         this.nombreAlumno = nombreAlumno;
         this.apellidoPaterno = apellidoPaterno;
@@ -78,11 +78,11 @@ public class Alumno {
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    public int getDniAlumno() {
+    public String getDniAlumno() {
         return dniAlumno;
     }
 
-    public void setDniAlumno(int dniAlumno) {
+    public void setDniAlumno(String dniAlumno) {
         this.dniAlumno = dniAlumno;
     }
 
@@ -110,19 +110,19 @@ public class Alumno {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public int getPesoAlumno() {
+    public Double getPesoAlumno() {
         return pesoAlumno;
     }
 
-    public void setPesoAlumno(int pesoAlumno) {
+    public void setPesoAlumno(Double pesoAlumno) {
         this.pesoAlumno = pesoAlumno;
     }
 
-    public int getTallaAlumno() {
+    public Double getTallaAlumno() {
         return tallaAlumno;
     }
 
-    public void setTallaAlumno(int tallaAlumno) {
+    public void setTallaAlumno(Double tallaAlumno) {
         this.tallaAlumno = tallaAlumno;
     }
 }

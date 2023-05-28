@@ -8,4 +8,7 @@ public interface IEntrenadorService {
 
     public void insert(Entrenador entrenador);
     List<Entrenador> list();
+    public  void delete(int idEntrenador);
+
+    public Entrenador listId(int idEntrenador);
 }

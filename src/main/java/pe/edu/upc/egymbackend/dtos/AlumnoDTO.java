@@ -8,12 +8,12 @@ public class AlumnoDTO {
     private String nombreAlumno;
     private String apellidoPaterno;
     private String apellidoMaterno;
-    private int dniAlumno;
+    private String dniAlumno;
     private String direccionAlumno;
     private String celularAlumno;
     private LocalDate fechaNacimiento;
-    private int pesoAlumno;
-    private int tallaAlumno;
+    private Double pesoAlumno;
+    private Double tallaAlumno;
 
     public int getIdAlumno() {
         return idAlumno;
@@ -47,11 +47,11 @@ public class AlumnoDTO {
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    public int getDniAlumno() {
+    public String getDniAlumno() {
         return dniAlumno;
     }
 
-    public void setDniAlumno(int dniAlumno) {
+    public void setDniAlumno(String dniAlumno) {
         this.dniAlumno = dniAlumno;
     }
 
@@ -79,19 +79,19 @@ public class AlumnoDTO {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public int getPesoAlumno() {
+    public Double getPesoAlumno() {
         return pesoAlumno;
     }
 
-    public void setPesoAlumno(int pesoAlumno) {
+    public void setPesoAlumno(Double pesoAlumno) {
         this.pesoAlumno = pesoAlumno;
     }
 
-    public int getTallaAlumno() {
+    public Double getTallaAlumno() {
         return tallaAlumno;
     }
 
-    public void setTallaAlumno(int tallaAlumno) {
+    public void setTallaAlumno(Double tallaAlumno) {
         this.tallaAlumno = tallaAlumno;
     }
 }

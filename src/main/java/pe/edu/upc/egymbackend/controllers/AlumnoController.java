@@ -27,4 +27,20 @@ public class AlumnoController {
             return m.map(x,AlumnoDTO.class);
         }).collect(Collectors.toList());
     }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Integer id){
+        aS.delete(id);
+    }
+    @GetMapping("/{id}")
+    public AlumnoDTO lisId(@PathVariable("id") Integer id){
+        ModelMapper m=new ModelMapper();
+        AlumnoDTO dto=m.map(aS.listId(id),AlumnoDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void goUpdate(@RequestBody AlumnoDTO dto){
+        ModelMapper m=new ModelMapper();
+        Alumno a=m.map(dto,Alumno.class);
+        aS.insert(a);
+    }
 }

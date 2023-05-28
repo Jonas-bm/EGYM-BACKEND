@@ -20,4 +20,15 @@ public class AlumnoServiceImplement implements IAlumnoService {
     public List<Alumno> list() {
         return aR.findAll();
     }
+
+    @Override
+    public void delete(int idAlumno) {
+    aR.deleteById(idAlumno);
+    }
+
+    @Override
+    public Alumno listId(int idAlumno) {
+        return aR.findById(idAlumno).orElse(new Alumno());
+    }
+
 }

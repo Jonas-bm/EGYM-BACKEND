@@ -28,4 +28,24 @@ public class ProductoController {
             return m.map(x, ProductoDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Integer id) {
+        aS.delete(id);
+    }
+    @GetMapping("/{id}")
+    public ProductoDTO listId(@PathVariable("id") Integer id){
+        ModelMapper m= new ModelMapper();
+        ProductoDTO dto = m.map(aS.listId(id), ProductoDTO.class);
+        return dto;
+    }
+
+    @PutMapping
+    public void goUpdate(@RequestBody ProductoDTO dto) {
+        ModelMapper m = new ModelMapper();
+        Producto a = m.map(dto, Producto.class);
+        aS.insert(a);
+    }
+
+
 }

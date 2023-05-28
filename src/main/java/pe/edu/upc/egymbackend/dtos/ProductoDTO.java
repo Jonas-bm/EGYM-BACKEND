@@ -1,12 +1,13 @@
 package pe.edu.upc.egymbackend.dtos;
 
 import javax.persistence.Column;
+import java.math.BigDecimal;
 
 public class ProductoDTO {
     private int idProducto;
     private String nombreProducto;
     private String descripcionProducto;
-    private int precioProducto;
+    private BigDecimal precioProducto;
 
     public int getIdProducto() {
         return idProducto;
@@ -32,11 +33,11 @@ public class ProductoDTO {
         this.descripcionProducto = descripcionProducto;
     }
 
-    public int getPrecioProducto() {
+    public BigDecimal getPrecioProducto() {
         return precioProducto;
     }
 
-    public void setPrecioProducto(int precioProducto) {
+    public void setPrecioProducto(BigDecimal precioProducto) {
         this.precioProducto = precioProducto;
     }
 }

@@ -1,6 +1,7 @@
 package pe.edu.upc.egymbackend.entities;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "productos")
@@ -10,15 +11,15 @@ public class Producto {
     private int idProducto;
     @Column(name = "nombreProducto", length = 60, nullable = false)
     private String nombreProducto;
-    @Column(name = "descripcionProducto", length = 40, nullable = false)
+    @Column(name = "descripcionProducto", length = 200, nullable = false)
     private String descripcionProducto;
     @Column(name = "precioProducto")
-    private int precioProducto;
+    private BigDecimal precioProducto;
 
     public Producto(){
     }
 
-    public Producto(int idProducto, String nombreProducto, String descripcionProducto, int precioProducto) {
+    public Producto(int idProducto, String nombreProducto, String descripcionProducto, BigDecimal precioProducto) {
         this.idProducto = idProducto;
         this.nombreProducto = nombreProducto;
         this.descripcionProducto = descripcionProducto;
@@ -50,11 +51,11 @@ public class Producto {
         this.descripcionProducto = descripcionProducto;
     }
 
-    public int getPrecioProducto() {
+    public BigDecimal getPrecioProducto() {
         return precioProducto;
     }
 
-    public void setPrecioProducto(int precioProducto) {
+    public void setPrecioProducto(BigDecimal precioProducto) {
         this.precioProducto = precioProducto;
     }
 }

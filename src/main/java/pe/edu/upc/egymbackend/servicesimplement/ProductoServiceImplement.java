@@ -22,4 +22,14 @@ public class ProductoServiceImplement implements IProductoService {
     public List<Producto> list() {
         return pR.findAll();
     }
+
+    @Override
+    public void delete(int idProducto) {
+        pR.deleteById(idProducto);
+    }
+
+    @Override
+    public Producto listId(int idProducto) {
+        return pR.findById(idProducto).orElse(new Producto());
+    }
 }

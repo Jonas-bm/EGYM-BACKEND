@@ -8,4 +8,6 @@ public interface IAlumnoService {
 
     public void insert(Alumno alumno);
     List<Alumno>list();
+    public void delete(int idAlumno);
+    public Alumno listId(int idAlumno);
 }

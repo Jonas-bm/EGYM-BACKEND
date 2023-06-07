@@ -8,54 +8,53 @@ import java.math.BigDecimal;
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idProducto;
-    @Column(name = "nombreProducto", length = 60, nullable = false)
-    private String nombreProducto;
-    @Column(name = "descripcionProducto", length = 200, nullable = false)
-    private String descripcionProducto;
-    @Column(name = "precioProducto")
-    private BigDecimal precioProducto;
+    private int id;
+    @Column(name = "nombre", length = 60, nullable = false)
+    private String nombre;
+    @Column(name = "descripcion", length = 200, nullable = false)
+    private String descripcion;
+    @Column(name = "precio")
+    private BigDecimal precio;
 
     public Producto(){
     }
 
-    public Producto(int idProducto, String nombreProducto, String descripcionProducto, BigDecimal precioProducto) {
-        this.idProducto = idProducto;
-        this.nombreProducto = nombreProducto;
-        this.descripcionProducto = descripcionProducto;
-        this.precioProducto = precioProducto;
+    public Producto(int id, String nombre, String descripcion, BigDecimal precio) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
     }
 
-
-    public int getIdProducto() {
-        return idProducto;
+    public int getId() {
+        return id;
     }
 
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNombreProducto() {
-        return nombreProducto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreProducto(String nombreProducto) {
-        this.nombreProducto = nombreProducto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDescripcionProducto() {
-        return descripcionProducto;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescripcionProducto(String descripcionProducto) {
-        this.descripcionProducto = descripcionProducto;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public BigDecimal getPrecioProducto() {
-        return precioProducto;
+    public BigDecimal getPrecio() {
+        return precio;
     }
 
-    public void setPrecioProducto(BigDecimal precioProducto) {
-        this.precioProducto = precioProducto;
+    public void setPrecio(BigDecimal precio) {
+        this.precio = precio;
     }
 }

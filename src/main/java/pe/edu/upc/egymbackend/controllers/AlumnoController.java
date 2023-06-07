@@ -8,7 +8,7 @@ import pe.edu.upc.egymbackend.services.IAlumnoService;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+//@CrossOrigin("http://localhost:4200/")
 @RestController
 @RequestMapping("/alumnos")
 public class AlumnoController {

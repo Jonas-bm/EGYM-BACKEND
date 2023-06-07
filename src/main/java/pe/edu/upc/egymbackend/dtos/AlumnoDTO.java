@@ -4,31 +4,31 @@ import javax.persistence.Column;
 import java.time.LocalDate;
 
 public class AlumnoDTO {
-    private int idAlumno;
-    private String nombreAlumno;
+    private int id;
+    private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
-    private String dniAlumno;
-    private String direccionAlumno;
-    private String celularAlumno;
+    private String dni;
+    private String direccion;
+    private long celular;
     private LocalDate fechaNacimiento;
-    private Double pesoAlumno;
-    private Double tallaAlumno;
+    private Double peso;
+    private Double talla;
 
-    public int getIdAlumno() {
-        return idAlumno;
+    public int getId() {
+        return id;
     }
 
-    public void setIdAlumno(int idAlumno) {
-        this.idAlumno = idAlumno;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNombreAlumno() {
-        return nombreAlumno;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreAlumno(String nombreAlumno) {
-        this.nombreAlumno = nombreAlumno;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApellidoPaterno() {
@@ -47,28 +47,28 @@ public class AlumnoDTO {
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    public String getDniAlumno() {
-        return dniAlumno;
+    public String getDni() {
+        return dni;
     }
 
-    public void setDniAlumno(String dniAlumno) {
-        this.dniAlumno = dniAlumno;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
-    public String getDireccionAlumno() {
-        return direccionAlumno;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDireccionAlumno(String direccionAlumno) {
-        this.direccionAlumno = direccionAlumno;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getCelularAlumno() {
-        return celularAlumno;
+    public long getCelular() {
+        return celular;
     }
 
-    public void setCelularAlumno(String celularAlumno) {
-        this.celularAlumno = celularAlumno;
+    public void setCelular(long celular) {
+        this.celular = celular;
     }
 
     public LocalDate getFechaNacimiento() {
@@ -79,19 +79,19 @@ public class AlumnoDTO {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public Double getPesoAlumno() {
-        return pesoAlumno;
+    public Double getPeso() {
+        return peso;
     }
 
-    public void setPesoAlumno(Double pesoAlumno) {
-        this.pesoAlumno = pesoAlumno;
+    public void setPeso(Double peso) {
+        this.peso = peso;
     }
 
-    public Double getTallaAlumno() {
-        return tallaAlumno;
+    public Double getTalla() {
+        return talla;
     }
 
-    public void setTallaAlumno(Double tallaAlumno) {
-        this.tallaAlumno = tallaAlumno;
+    public void setTalla(Double talla) {
+        this.talla = talla;
     }
 }

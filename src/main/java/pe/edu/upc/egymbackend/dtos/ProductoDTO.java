@@ -4,40 +4,40 @@ import javax.persistence.Column;
 import java.math.BigDecimal;
 
 public class ProductoDTO {
-    private int idProducto;
-    private String nombreProducto;
-    private String descripcionProducto;
-    private BigDecimal precioProducto;
+    private int id;
+    private String nombre;
+    private String descripcion;
+    private BigDecimal precio;
 
-    public int getIdProducto() {
-        return idProducto;
+    public int getId() {
+        return id;
     }
 
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNombreProducto() {
-        return nombreProducto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreProducto(String nombreProducto) {
-        this.nombreProducto = nombreProducto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDescripcionProducto() {
-        return descripcionProducto;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescripcionProducto(String descripcionProducto) {
-        this.descripcionProducto = descripcionProducto;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public BigDecimal getPrecioProducto() {
-        return precioProducto;
+    public BigDecimal getPrecio() {
+        return precio;
     }
 
-    public void setPrecioProducto(BigDecimal precioProducto) {
-        this.precioProducto = precioProducto;
+    public void setPrecio(BigDecimal precio) {
+        this.precio = precio;
     }
 }

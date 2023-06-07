@@ -3,7 +3,7 @@ package pe.edu.upc.egymbackend.dtos;
 import javax.persistence.Column;
 
 public class EntrenadorDTO {
-    private int idEntrenador;
+    private int id;
     private String nombre;
 
     private String apellidoPaterno;
@@ -23,18 +23,17 @@ public class EntrenadorDTO {
 
     private String estado;
 
-    public int getIdEntrenador() {
-        return idEntrenador;
+    public int getId() {
+        return id;
     }
 
-    public void setIdEntrenador(int idEntrenador) {
-        this.idEntrenador = idEntrenador;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

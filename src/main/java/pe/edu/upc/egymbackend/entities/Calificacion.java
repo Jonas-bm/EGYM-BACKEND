@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Calificacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idCalificacion;
+    private int id;
     @Column(name= "name", length = 40, nullable = false)
     private String name;
     @Column(name= "puntuacion", length = 10, nullable = false)
@@ -18,19 +18,19 @@ public class Calificacion {
     public Calificacion() {
     }
 
-    public Calificacion(int idCalificacion, String name, String puntuacion, String comentario) {
-        this.idCalificacion = idCalificacion;
+    public Calificacion(int id, String name, String puntuacion, String comentario) {
+        this.id = id;
         this.name = name;
         this.puntuacion = puntuacion;
         this.comentario = comentario;
     }
 
-    public int getIdCalificacion() {
-        return idCalificacion;
+    public int getId() {
+        return id;
     }
 
-    public void setIdCalificacion(int idCalificacion) {
-        this.idCalificacion = idCalificacion;
+    public void setId(int idCalificacion) {
+        this.id = idCalificacion;
     }
 
     public String getName() {

@@ -3,11 +3,11 @@ package pe.edu.upc.egymbackend.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "nutricionista")
+@Table(name = "nutricionistas")
 public class Nutricionista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idNutricionista;
+    private int id;
     @Column(name = "nombreNutricionista",length =60,nullable = false )
     private String nombreNutricionista;
     @Column(name = "apellidosNutricionista",length =60,nullable = false )
@@ -26,23 +26,37 @@ public class Nutricionista {
     public Nutricionista() {
     }
 
-    public Nutricionista(int idNutricionista, String nombreNutricionista, String apellidosNutricionista, String dni, String telefono, String sexo, String descripcion, String estado) {
-        this.idNutricionista = idNutricionista;
+    @Override
+    public String toString() {
+        return "Nutricionista{" +
+                "id=" + id +
+                ", nombreNutricionista='" + nombreNutricionista + '\'' +
+                ", apellidosNutricionista='" + apellidosNutricionista + '\'' +
+                ", dni='" + dni + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", sexo='" + sexo + '\'' +
+                ", Descripcion='" + Descripcion + '\'' +
+                ", Estado='" + Estado + '\'' +
+                '}';
+    }
+
+    public Nutricionista(int id, String nombreNutricionista, String apellidosNutricionista, String dni, String telefono, String sexo, String descripcion, String estado) {
+        this.id = id;
         this.nombreNutricionista = nombreNutricionista;
         this.apellidosNutricionista = apellidosNutricionista;
         this.dni = dni;
         this.telefono = telefono;
         this.sexo = sexo;
-        Descripcion = descripcion;
-        Estado = estado;
+        this.Descripcion = descripcion;
+        this.Estado = estado;
     }
 
-    public int getIdNutricionista() {
-        return idNutricionista;
+    public int getId() {
+        return id;
     }
 
-    public void setIdNutricionista(int idNutricionista) {
-        this.idNutricionista = idNutricionista;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombreNutricionista() {

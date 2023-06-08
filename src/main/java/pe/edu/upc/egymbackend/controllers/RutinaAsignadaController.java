@@ -30,7 +30,7 @@ public class RutinaAsignadaController {
             return m.map(x,RutinaAsignadaDTO.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping("/{id")
+    @DeleteMapping("/{id}")
     public void Eliminar(@PathVariable("id") Integer id) {
         ruaS.eliminar(id);
     }

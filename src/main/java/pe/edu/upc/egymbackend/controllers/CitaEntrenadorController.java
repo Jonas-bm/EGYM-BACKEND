@@ -29,7 +29,7 @@ public class CitaEntrenadorController {
             return m.map(x,CitaEntrenadorDTO.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping("/{id")
+    @DeleteMapping("/{id}")
     public void Eliminar(@PathVariable("id") Integer id){
         ceS.eliminar(id);
     }

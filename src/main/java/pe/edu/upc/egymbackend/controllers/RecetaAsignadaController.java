@@ -30,7 +30,7 @@ public class RecetaAsignadaController {
             return m.map(x,RecetaAsignadaDTO.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping("/{id")
+    @DeleteMapping("/{id}")
     public void Eliminar(@PathVariable("id") Integer id) {
         raS.eliminar(id);
     }

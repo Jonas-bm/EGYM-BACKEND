@@ -2,7 +2,8 @@ package pe.edu.upc.egymbackend.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pe.edu.upc.egymbackend.entities.Nutricionista;
+import pe.edu.upc.egymbackend.entities.VideosRutinario;
+
 @Repository
-public interface INutricionistaRepository extends JpaRepository<Nutricionista,Integer> {
+public interface IVideosRutinarioRepository extends JpaRepository<VideosRutinario,Integer> {
 }

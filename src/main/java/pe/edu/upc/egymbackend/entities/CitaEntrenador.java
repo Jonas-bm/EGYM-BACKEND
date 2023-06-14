@@ -19,20 +19,16 @@ public class CitaEntrenador {
     @ManyToOne
     @JoinColumn(name="idAlumno")
     private Alumno alumno;
-    @OneToOne
-    @JoinColumn(name="idCalificacion")
-    private Calificacion calificacion;
 
     public CitaEntrenador() {
     }
 
-    public CitaEntrenador(Integer idCita, LocalDate fechaCita, String descripcion, Entrenador entrenador, Alumno alumno, Calificacion calificacion) {
+    public CitaEntrenador(Integer idCita, LocalDate fechaCita, String descripcion, Entrenador entrenador, Alumno alumno) {
         this.idCita = idCita;
         this.fechaCita = fechaCita;
         this.descripcion = descripcion;
         this.entrenador = entrenador;
         this.alumno = alumno;
-        this.calificacion = calificacion;
     }
 
     public Integer getIdCita() {
@@ -75,11 +71,4 @@ public class CitaEntrenador {
         this.alumno = alumno;
     }
 
-    public Calificacion getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(Calificacion calificacion) {
-        this.calificacion = calificacion;
-    }
 }

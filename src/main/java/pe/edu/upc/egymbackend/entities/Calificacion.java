@@ -22,6 +22,7 @@ public class Calificacion {
         this.id = id;
         this.name = name;
         this.puntuacion = puntuacion;
+
         this.comentario = comentario;
     }
 

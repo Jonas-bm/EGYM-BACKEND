@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/documento_venta")
+@RequestMapping("/documentoVenta")
 public class DocumentoVentaController {
     @Autowired
     private IDocumentoVentaService dvS;

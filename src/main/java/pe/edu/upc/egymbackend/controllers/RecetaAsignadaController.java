@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/receta_asignada")
+@RequestMapping("/recetaAsignada")
 public class RecetaAsignadaController {
     @Autowired
     private IRecetaAsignadaService raS;

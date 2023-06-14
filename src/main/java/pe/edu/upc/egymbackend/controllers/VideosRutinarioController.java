@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/videos_rutinario")
+@RequestMapping("/videoRutinario")
 public class VideosRutinarioController {
     @Autowired
     private IVideosRutinarioService vrS;

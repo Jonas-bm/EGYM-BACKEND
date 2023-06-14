@@ -8,18 +8,18 @@ import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 
 public class VideosRutinarioDTO {
-    private Integer idVideosRutionarios;
+    private Integer idVideosRutinarios;
     private Entrenador entrenador;
     private String nombreTipoVideo;
     private String descripcion;
-    private BigDecimal duracion;
+    private String duracion;
 
-    public Integer getIdVideosRutionarios() {
-        return idVideosRutionarios;
+    public Integer getIdVideosRutinarios() {
+        return idVideosRutinarios;
     }
 
-    public void setIdVideosRutionarios(Integer idVideosRutionarios) {
-        this.idVideosRutionarios = idVideosRutionarios;
+    public void setIdVideosRutinarios(Integer idVideosRutinarios) {
+        this.idVideosRutinarios = idVideosRutinarios;
     }
 
     public Entrenador getEntrenador() {
@@ -46,11 +46,11 @@ public class VideosRutinarioDTO {
         this.descripcion = descripcion;
     }
 
-    public BigDecimal getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(BigDecimal duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 }

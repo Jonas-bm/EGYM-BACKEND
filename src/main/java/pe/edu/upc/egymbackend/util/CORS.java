@@ -33,7 +33,6 @@ public class CORS implements Filter {
             chain.doFilter(req,res);
         }
     }
-
     @Override
     public void destroy() {
     }

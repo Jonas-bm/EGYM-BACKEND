@@ -3,17 +3,17 @@ package pe.edu.upc.egymbackend.dtos;
 import javax.persistence.Column;
 
 public class CalificacionDTO {
-    private int idCalificacion;
+    private int id;
     private String name;
     private String puntuacion;
     private String comentario;
 
-    public int getIdCalificacion() {
-        return idCalificacion;
+    public int getId() {
+        return id;
     }
 
-    public void setIdCalificacion(int idCalificacion) {
-        this.idCalificacion = idCalificacion;
+    public void setId(int idCalificacion) {
+        this.id = idCalificacion;
     }
 
     public String getName() {

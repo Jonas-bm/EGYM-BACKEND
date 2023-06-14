@@ -3,7 +3,7 @@ package pe.edu.upc.egymbackend.dtos;
 import javax.persistence.Column;
 
 public class NutricionistaDTO {
-    private int idNutricionista;
+    private int id;
     private String nombreNutricionista;
     private String apellidosNutricionista;
     private String dni;
@@ -12,12 +12,12 @@ public class NutricionistaDTO {
     private String Descripcion;
     private String Estado;
 
-    public int getIdNutricionista() {
-        return idNutricionista;
+    public int getId() {
+        return id;
     }
 
-    public void setIdNutricionista(int idNutricionista) {
-        this.idNutricionista = idNutricionista;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombreNutricionista() {
@@ -65,7 +65,7 @@ public class NutricionistaDTO {
     }
 
     public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+        this.Descripcion = descripcion;
     }
 
     public String getEstado() {
@@ -73,6 +73,20 @@ public class NutricionistaDTO {
     }
 
     public void setEstado(String estado) {
-        Estado = estado;
+        this.Estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "NutricionistaDTO{" +
+                "id=" + id +
+                ", nombreNutricionista='" + nombreNutricionista + '\'' +
+                ", apellidosNutricionista='" + apellidosNutricionista + '\'' +
+                ", dni='" + dni + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", sexo='" + sexo + '\'' +
+                ", Descripcion='" + Descripcion + '\'' +
+                ", Estado='" + Estado + '\'' +
+                '}';
     }
 }

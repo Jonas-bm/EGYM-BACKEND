@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/cita_Entrenador")
+@RequestMapping("/citaEntrenador")
 public class CitaEntrenadorController {
     @Autowired
     private ICitaEntrenadorService ceS;
@@ -29,7 +29,7 @@ public class CitaEntrenadorController {
             return m.map(x,CitaEntrenadorDTO.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping("/{id")
+    @DeleteMapping("/{id}")
     public void Eliminar(@PathVariable("id") Integer id){
         ceS.eliminar(id);
     }

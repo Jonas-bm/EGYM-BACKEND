@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/cita_Nutricionista")
+@RequestMapping("/citaNutricionista")
 public class CitaNutricionistaController {
     @Autowired
     private ICitaNutricionistaService cnS;
@@ -30,7 +30,7 @@ public class CitaNutricionistaController {
             return m.map(x,CitaNutricionistaDTO.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping("/{id")
+    @DeleteMapping("/{id}")
     public void Eliminar(@PathVariable("id") Integer id) {
         cnS.eliminar(id);
     }

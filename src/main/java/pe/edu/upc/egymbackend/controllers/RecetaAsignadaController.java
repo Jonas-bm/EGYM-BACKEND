@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/receta_asignada")
+@RequestMapping("/recetaAsignada")
 public class RecetaAsignadaController {
     @Autowired
     private IRecetaAsignadaService raS;
@@ -30,7 +30,7 @@ public class RecetaAsignadaController {
             return m.map(x,RecetaAsignadaDTO.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping("/{id")
+    @DeleteMapping("/{id}")
     public void Eliminar(@PathVariable("id") Integer id) {
         raS.eliminar(id);
     }

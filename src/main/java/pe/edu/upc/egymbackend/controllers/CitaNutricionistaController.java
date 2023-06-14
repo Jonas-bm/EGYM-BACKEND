@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/cita_Nutricionista")
+@RequestMapping("/citaNutricionista")
 public class CitaNutricionistaController {
     @Autowired
     private ICitaNutricionistaService cnS;

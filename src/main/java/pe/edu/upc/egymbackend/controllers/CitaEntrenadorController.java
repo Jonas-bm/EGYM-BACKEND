@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/cita_Entrenador")
+@RequestMapping("/citaEntrenador")
 public class CitaEntrenadorController {
     @Autowired
     private ICitaEntrenadorService ceS;

@@ -11,7 +11,6 @@ public class CitaEntrenadorDTO {
     private String descripcion;
     private Entrenador entrenador;
     private Alumno alumno;
-    private Calificacion calificacion;
 
     public Integer getIdCita() {
         return idCita;
@@ -53,11 +52,4 @@ public class CitaEntrenadorDTO {
         this.alumno = alumno;
     }
 
-    public Calificacion getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(Calificacion calificacion) {
-        this.calificacion = calificacion;
-    }
 }

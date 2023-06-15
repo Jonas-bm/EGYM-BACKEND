@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/recetaAsignada")
-public class RecetaAsignadaController {
+public class    RecetaAsignadaController {
     @Autowired
     private IRecetaAsignadaService raS;
     @PostMapping

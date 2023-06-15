@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/detalle_venta")
+@RequestMapping("/detalleVenta")
 public class DetalleVentaController {
     @Autowired
     private IDetalleVentaService dvS;

@@ -26,4 +26,9 @@ public class CitaEntrenadorServiceImplement implements ICitaEntrenadorService {
     public void eliminar(int idCitaEntrenador) {
         ceR.deleteById(idCitaEntrenador);
     }
+
+    @Override
+    public CitaEntrenador listId(int idCitaEntrenador) {
+        return ceR.findById(idCitaEntrenador).orElse(new CitaEntrenador());
+    }
 }

@@ -26,4 +26,9 @@ public class RecetaAsignadaServiceImplement implements IRecetaAsignadaService {
     public void eliminar(int idRecetaAsignada) {
         reaR.deleteById(idRecetaAsignada);
     }
+
+    @Override
+    public RecetaAsignada listId(int idRecetaAsignada) {
+        return reaR.findById(idRecetaAsignada).orElse(new RecetaAsignada());
+    }
 }

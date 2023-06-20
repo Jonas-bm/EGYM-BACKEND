@@ -25,4 +25,9 @@ public class DetalleVentaServiceImplement implements IDetalleVentaService {
     public void eliminar(int idDetalleVenta) {
         dvR.deleteById(idDetalleVenta);
     }
+
+    @Override
+    public DetalleVenta listId(int idDetalleVenta) {
+        return dvR.findById(idDetalleVenta).orElse(new DetalleVenta());
+    }
 }

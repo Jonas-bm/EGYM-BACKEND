@@ -8,4 +8,5 @@ public interface ICitaEntrenadorService {
     public void insertar(CitaEntrenador citaEntrenador);
     List<CitaEntrenador>listar();
     public void eliminar(int idCitaEntrenador);
+    public CitaEntrenador listId(int idCitaEntrenador);
 }

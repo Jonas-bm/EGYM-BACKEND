@@ -34,4 +34,16 @@ public class CitaNutricionistaController {
     public void Eliminar(@PathVariable("id") Integer id) {
         cnS.eliminar(id);
     }
+    @GetMapping("/{id}")
+    public CitaNutricionistaDTO listId(@PathVariable("id") Integer id){
+        ModelMapper m=new ModelMapper();
+        CitaNutricionistaDTO dto=m.map(cnS.listId(id),CitaNutricionistaDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void goUpdate(@RequestBody CitaNutricionistaDTO dto){
+        ModelMapper m=new ModelMapper();
+        CitaNutricionista ciNutr=m.map(dto,CitaNutricionista.class);
+        cnS.insertar(ciNutr);
+    }
 }

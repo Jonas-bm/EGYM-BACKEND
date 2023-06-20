@@ -3,9 +3,11 @@ package pe.edu.upc.egymbackend.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.egymbackend.dtos.CitaEntrenadorDTO;
 import pe.edu.upc.egymbackend.dtos.DetalleVentaDTO;
 import pe.edu.upc.egymbackend.dtos.DocumentoVentaDTO;
 import pe.edu.upc.egymbackend.dtos.SuscripcionDTO;
+import pe.edu.upc.egymbackend.entities.CitaEntrenador;
 import pe.edu.upc.egymbackend.entities.DocumentoVenta;
 import pe.edu.upc.egymbackend.entities.Suscripcion;
 import pe.edu.upc.egymbackend.services.ISuscripcionService;
@@ -34,5 +36,17 @@ public class SuscripcionController {
     @DeleteMapping("/{id}")
     public void Eliminar(@PathVariable("id") Integer id){
         sS.eliminar(id);
+    }
+    @GetMapping("/{id}")
+    public SuscripcionDTO listId(@PathVariable("id") Integer id){
+        ModelMapper m=new ModelMapper();
+        SuscripcionDTO dto=m.map(sS.listId(id),SuscripcionDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void goUpdate(@RequestBody SuscripcionDTO dto){
+        ModelMapper m=new ModelMapper();
+        Suscripcion sus=m.map(dto,Suscripcion.class);
+        sS.insertar(sus);
     }
 }

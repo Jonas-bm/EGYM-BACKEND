@@ -3,8 +3,10 @@ package pe.edu.upc.egymbackend.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.egymbackend.dtos.CitaEntrenadorDTO;
 import pe.edu.upc.egymbackend.dtos.CitaNutricionistaDTO;
 import pe.edu.upc.egymbackend.dtos.RecetaAsignadaDTO;
+import pe.edu.upc.egymbackend.entities.CitaEntrenador;
 import pe.edu.upc.egymbackend.entities.CitaNutricionista;
 import pe.edu.upc.egymbackend.entities.RecetaAsignada;
 import pe.edu.upc.egymbackend.services.IRecetaAsignadaService;
@@ -33,5 +35,17 @@ public class RecetaAsignadaController {
     @DeleteMapping("/{id}")
     public void Eliminar(@PathVariable("id") Integer id) {
         raS.eliminar(id);
+    }
+    @GetMapping("/{id}")
+    public RecetaAsignadaDTO listId(@PathVariable("id") Integer id){
+        ModelMapper m=new ModelMapper();
+        RecetaAsignadaDTO dto=m.map(raS.listId(id),RecetaAsignadaDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void goUpdate(@RequestBody RecetaAsignadaDTO dto){
+        ModelMapper m=new ModelMapper();
+        RecetaAsignada rcta=m.map(dto,RecetaAsignada.class);
+        raS.insertar(rcta);
     }
 }

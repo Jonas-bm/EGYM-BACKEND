@@ -3,7 +3,9 @@ package pe.edu.upc.egymbackend.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.egymbackend.dtos.CitaEntrenadorDTO;
 import pe.edu.upc.egymbackend.dtos.DetalleVentaDTO;
+import pe.edu.upc.egymbackend.entities.CitaEntrenador;
 import pe.edu.upc.egymbackend.entities.DetalleVenta;
 import pe.edu.upc.egymbackend.services.IDetalleVentaService;
 
@@ -31,5 +33,17 @@ public class DetalleVentaController {
     @DeleteMapping("/{id}")
     public void Eliminar(@PathVariable("id") Integer id){
         dvS.eliminar(id);
+    }
+    @GetMapping("/{id}")
+    public DetalleVentaDTO listId(@PathVariable("id") Integer id){
+        ModelMapper m=new ModelMapper();
+        DetalleVentaDTO dto=m.map(dvS.listId(id),DetalleVentaDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void goUpdate(@RequestBody DetalleVentaDTO dto){
+        ModelMapper m=new ModelMapper();
+        DetalleVenta dtven=m.map(dto,DetalleVenta.class);
+        dvS.insertar(dtven);
     }
 }

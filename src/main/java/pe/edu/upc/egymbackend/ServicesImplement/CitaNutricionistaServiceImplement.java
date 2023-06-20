@@ -26,4 +26,9 @@ public class CitaNutricionistaServiceImplement implements ICitaNutricionistaServ
     public void eliminar(int idCitaNutricionista) {
         cnR.deleteById(idCitaNutricionista);
     }
+
+    @Override
+    public CitaNutricionista listId(int idCitaNutricionista) {
+        return cnR.findById(idCitaNutricionista).orElse(new CitaNutricionista());
+    }
 }

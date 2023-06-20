@@ -26,4 +26,9 @@ public class VideosRutinarioServiceImplement implements IVideosRutinarioService 
     public void eliminar(int idVideosRutinario) {
         vrR.deleteById(idVideosRutinario);
     }
+
+    @Override
+    public VideosRutinario listId(int idVideosRutinario) {
+        return vrR.findById(idVideosRutinario).orElse(new VideosRutinario());
+    }
 }

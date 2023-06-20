@@ -33,4 +33,17 @@ public class CitaEntrenadorController {
     public void Eliminar(@PathVariable("id") Integer id){
         ceS.eliminar(id);
     }
+    @GetMapping("/{id}")
+    public CitaEntrenadorDTO listId(@PathVariable("id") Integer id){
+        ModelMapper m=new ModelMapper();
+        CitaEntrenadorDTO dto=m.map(ceS.listId(id),CitaEntrenadorDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void goUpdate(@RequestBody CitaEntrenadorDTO dto){
+        ModelMapper m=new ModelMapper();
+        CitaEntrenador ciEntr=m.map(dto,CitaEntrenador.class);
+        ceS.insertar(ciEntr);
+    }
+
 }

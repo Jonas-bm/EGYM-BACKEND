@@ -25,4 +25,9 @@ public class DocumentoVentaServiceImplement implements IDocumentoVentaService {
     public void eliminar(int idDocumentoVenta) {
         dvR.deleteById(idDocumentoVenta);
     }
+
+    @Override
+    public DocumentoVenta listId(int idDocumentoVenta) {
+        return dvR.findById(idDocumentoVenta).orElse(new DocumentoVenta());
+    }
 }

@@ -2,6 +2,7 @@ package pe.edu.upc.egymbackend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.egymbackend.dtos.CitaEntrenadorDTO;
 import pe.edu.upc.egymbackend.dtos.CitaNutricionistaDTO;
@@ -17,12 +18,14 @@ import java.util.stream.Collectors;
 public class CitaNutricionistaController {
     @Autowired
     private ICitaNutricionistaService cnS;
+    //@PreAuthorize("hasAuthority('NUTRICIONISTA')")
     @PostMapping
     public void registrar(@RequestBody CitaNutricionistaDTO dto){
         ModelMapper m=new ModelMapper();
         CitaNutricionista cn=m.map(dto, CitaNutricionista.class);
         cnS.insertar(cn);
     }
+    //@PreAuthorize("hasAnyAuthority('ENTRENADOR','NUTRICIONISTA','ALUMNO','ADMIN')")
     @GetMapping
     public List<CitaNutricionistaDTO> listar(){
         return cnS.listar().stream().map(x->{

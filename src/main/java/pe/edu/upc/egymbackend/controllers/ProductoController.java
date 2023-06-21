@@ -2,6 +2,7 @@ package pe.edu.upc.egymbackend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.egymbackend.dtos.ProductoDTO;
 import pe.edu.upc.egymbackend.entities.Producto;
@@ -15,6 +16,7 @@ public class ProductoController {
     @Autowired
     private IProductoService aS;
     @PostMapping
+    //@PreAuthorize("hasAuthority('ADMIN')")
     public void insert(@RequestBody ProductoDTO dto){
         ModelMapper m = new ModelMapper();
         Producto a=m.map(dto, Producto.class);
@@ -22,6 +24,7 @@ public class ProductoController {
     }
 
     @GetMapping
+    //@PreAuthorize("hasAnyAuthority('ALUMNO','ADMIN')")
     public List<ProductoDTO> list() {
         return aS.list().stream().map(x->{
             ModelMapper m = new ModelMapper();
@@ -30,17 +33,19 @@ public class ProductoController {
     }
 
     @DeleteMapping("/{id}")
+    //@PreAuthorize("hasAuthority('ADMIN')")
     public void delete(@PathVariable("id") Integer id) {
         aS.delete(id);
     }
     @GetMapping("/{id}")
+    //@PreAuthorize("hasAuthority('ADMIN')")
     public ProductoDTO listId(@PathVariable("id") Integer id){
         ModelMapper m= new ModelMapper();
         ProductoDTO dto = m.map(aS.listId(id), ProductoDTO.class);
         return dto;
     }
-
     @PutMapping
+    //@PreAuthorize("hasAuthority('ADMIN')")
     public void goUpdate(@RequestBody ProductoDTO dto) {
         ModelMapper m = new ModelMapper();
         Producto a = m.map(dto, Producto.class);

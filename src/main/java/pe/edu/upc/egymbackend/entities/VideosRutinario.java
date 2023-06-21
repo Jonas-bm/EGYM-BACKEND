@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 public class VideosRutinario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idVideosRutionarios;
+    private Integer idVideosRutinarios;
     @ManyToOne
     @JoinColumn(name="idEntrenador")
     private Entrenador entrenador;
@@ -15,26 +15,26 @@ public class VideosRutinario {
     private String nombreTipoVideo;
     @Column(name = "descripcion",length = 150,nullable = false)
     private String descripcion;
-    @Column(name = "duracion",nullable = false)
-    private BigDecimal duracion;
+    @Column(name = "duracion",length = 50,nullable = false)
+    private String duracion;
 
     public VideosRutinario() {
     }
 
-    public VideosRutinario(Integer idVideosRutionarios, Entrenador entrenador, String nombreTipoVideo, String descripcion, BigDecimal duracion) {
-        this.idVideosRutionarios = idVideosRutionarios;
+    public VideosRutinario(Integer idVideosRutinarios, Entrenador entrenador, String nombreTipoVideo, String descripcion, String duracion) {
+        this.idVideosRutinarios = idVideosRutinarios;
         this.entrenador = entrenador;
         this.nombreTipoVideo = nombreTipoVideo;
         this.descripcion = descripcion;
         this.duracion = duracion;
     }
 
-    public Integer getIdVideosRutionarios() {
-        return idVideosRutionarios;
+    public Integer getIdVideosRutinarios() {
+        return idVideosRutinarios;
     }
 
-    public void setIdVideosRutionarios(Integer idVideosRutionarios) {
-        this.idVideosRutionarios = idVideosRutionarios;
+    public void setIdVideosRutinarios(Integer idVideosRutinarios) {
+        this.idVideosRutinarios = idVideosRutinarios;
     }
 
     public Entrenador getEntrenador() {
@@ -61,11 +61,11 @@ public class VideosRutinario {
         this.descripcion = descripcion;
     }
 
-    public BigDecimal getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(BigDecimal duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 }

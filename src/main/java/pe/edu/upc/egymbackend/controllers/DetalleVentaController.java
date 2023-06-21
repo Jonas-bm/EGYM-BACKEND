@@ -2,6 +2,7 @@ package pe.edu.upc.egymbackend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.egymbackend.dtos.CitaEntrenadorDTO;
 import pe.edu.upc.egymbackend.dtos.DetalleVentaDTO;
@@ -13,16 +14,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/detalle_venta")
+@RequestMapping("/detalleVenta")
 public class DetalleVentaController {
     @Autowired
     private IDetalleVentaService dvS;
     @PostMapping
+    //@PreAuthorize("hasAuthority('ADMIN')")
     public void registrar(@RequestBody DetalleVentaDTO dto){
         ModelMapper m=new ModelMapper();
         DetalleVenta dv=m.map(dto,DetalleVenta.class);
         dvS.insertar(dv);
     }
+    //@PreAuthorize("hasAnyAuthority('ALUMNO','ADMIN')")
     @GetMapping
     public List<DetalleVentaDTO>listar(){
         return dvS.listar().stream().map(x->{

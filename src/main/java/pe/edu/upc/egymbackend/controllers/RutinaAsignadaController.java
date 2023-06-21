@@ -2,6 +2,7 @@ package pe.edu.upc.egymbackend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.egymbackend.dtos.CitaEntrenadorDTO;
 import pe.edu.upc.egymbackend.dtos.RecetaAsignadaDTO;
@@ -20,12 +21,14 @@ public class RutinaAsignadaController {
     @Autowired
     private IRutinaAsignadaService ruaS;
     @PostMapping
+    //PreAuthorize("hasAuthority('ENTRENADOR')")
     public void registrar(@RequestBody RutinaAsignadaDTO dto){
         ModelMapper m=new ModelMapper();
         RutinaAsignada rua=m.map(dto, RutinaAsignada.class);
         ruaS.insertar(rua);
     }
     @GetMapping
+    //@PreAuthorize("hasAnyAuthority('ENTRENADOR','ALUMNO','ADMIN')")
     public List<RutinaAsignadaDTO> listar(){
         return ruaS.listar().stream().map(x->{
             ModelMapper m=new ModelMapper();

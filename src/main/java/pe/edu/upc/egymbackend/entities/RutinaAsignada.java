@@ -10,7 +10,7 @@ public class RutinaAsignada {
     private Integer idRutinaAsignada;
     @Column(name="nombreRutina",length = 50,nullable = false)
     private String nombreRutina;
-    @Column(name="descripcion",length = 100,nullable = false)
+    @Column(name="descripcion",length = 200,nullable = false)
     private String descripcion;
     @Column(name="repeticiones",length = 50,nullable = false)
     private String repeticiones;

@@ -10,7 +10,6 @@ import java.time.LocalDate;
 
 public class DocumentoVentaDTO {
     private Integer idDocumentoventa;
-    private BigDecimal montoTotal;
     private LocalDate fecha;
     private Alumno alumno;
 
@@ -22,13 +21,6 @@ public class DocumentoVentaDTO {
         this.idDocumentoventa = idDocumentoventa;
     }
 
-    public BigDecimal getMontoTotal() {
-        return montoTotal;
-    }
-
-    public void setMontoTotal(BigDecimal montoTotal) {
-        this.montoTotal = montoTotal;
-    }
 
     public LocalDate getFecha() {
         return fecha;

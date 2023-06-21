@@ -14,7 +14,7 @@ public class Visualizaciones {
     @ManyToOne
     @JoinColumn(name = "idVideosRutionarios")
     private VideosRutinario videosRutinario;
-    @Column(name="comentario",length = 100,nullable = false)
+    @Column(name="comentario",length = 200,nullable = false)
     private String comentario;
 
     public Visualizaciones() {

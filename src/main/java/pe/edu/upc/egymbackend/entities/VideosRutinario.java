@@ -13,7 +13,7 @@ public class VideosRutinario {
     private Entrenador entrenador;
     @Column(name = "nombreTipoVideo",length =50,nullable = false)
     private String nombreTipoVideo;
-    @Column(name = "descripcion",length = 150,nullable = false)
+    @Column(name = "descripcion",length = 200,nullable = false)
     private String descripcion;
     @Column(name = "duracion",length = 50,nullable = false)
     private String duracion;

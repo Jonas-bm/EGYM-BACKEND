@@ -14,8 +14,6 @@ public class DetalleVenta {
     private Producto producto;
     @Column(name = "montoTotal",nullable = false)
     private BigDecimal montoTotal;
-    @Column(name = "fechaVenta",nullable = false)
-    private LocalDate fechaVenta;
     @ManyToOne
     @JoinColumn(name = "idDocumentoventa")
     private DocumentoVenta documentoVenta;
@@ -23,11 +21,10 @@ public class DetalleVenta {
     public DetalleVenta() {
     }
 
-    public DetalleVenta(Integer idDetalleVenta, Producto producto, BigDecimal montoTotal, LocalDate fechaVenta, DocumentoVenta documentoVenta) {
+    public DetalleVenta(Integer idDetalleVenta, Producto producto, BigDecimal montoTotal, DocumentoVenta documentoVenta) {
         this.idDetalleVenta = idDetalleVenta;
         this.producto = producto;
         this.montoTotal = montoTotal;
-        this.fechaVenta = fechaVenta;
         this.documentoVenta = documentoVenta;
     }
 
@@ -53,14 +50,6 @@ public class DetalleVenta {
 
     public void setMontoTotal(BigDecimal montoTotal) {
         this.montoTotal = montoTotal;
-    }
-
-    public LocalDate getFechaVenta() {
-        return fechaVenta;
-    }
-
-    public void setFechaVenta(LocalDate fechaVenta) {
-        this.fechaVenta = fechaVenta;
     }
 
     public DocumentoVenta getDocumentoVenta() {

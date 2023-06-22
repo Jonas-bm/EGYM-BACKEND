@@ -11,12 +11,12 @@ public class CitaEntrenador {
     private Integer idCita;
     @Column(name="fechaCita",nullable = false)
     private LocalDate fechaCita;
-    @Column(name="descripcion",length = 100,nullable = false)
+    @Column(name="descripcion",length = 200,nullable = false)
     private String descripcion;
     @ManyToOne
     @JoinColumn(name = "idEntrenador")
     private Entrenador entrenador;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="idAlumno")
     private Alumno alumno;
 

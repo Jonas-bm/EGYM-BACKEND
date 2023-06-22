@@ -9,7 +9,6 @@ public class CitaNutricionistaDTO {
     private Alumno alumno;
     private Nutricionista nutricionista;
     private LocalDate fecha;
-    private String descripcion;
 
     public Integer getIdCitaNutricionista() {
         return idCitaNutricionista;
@@ -43,11 +42,4 @@ public class CitaNutricionistaDTO {
         this.fecha = fecha;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 }

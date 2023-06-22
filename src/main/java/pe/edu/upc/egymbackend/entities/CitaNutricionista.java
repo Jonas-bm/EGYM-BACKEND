@@ -16,18 +16,15 @@ public class CitaNutricionista {
     private Nutricionista nutricionista;
     @Column(name="fecha",nullable = false)
     private LocalDate fecha;
-    @Column(name="descripcion",length = 100,nullable = false)
-    private String descripcion;
 
     public CitaNutricionista() {
     }
 
-    public CitaNutricionista(Integer idCitaNutricionista, Alumno alumno, Nutricionista nutricionista, LocalDate fecha, String descripcion) {
+    public CitaNutricionista(Integer idCitaNutricionista, Alumno alumno, Nutricionista nutricionista, LocalDate fecha) {
         this.idCitaNutricionista = idCitaNutricionista;
         this.alumno = alumno;
         this.nutricionista = nutricionista;
         this.fecha = fecha;
-        this.descripcion = descripcion;
     }
 
     public Integer getIdCitaNutricionista() {
@@ -62,11 +59,4 @@ public class CitaNutricionista {
         this.fecha = fecha;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 }

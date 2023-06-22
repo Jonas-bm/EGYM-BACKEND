@@ -13,7 +13,6 @@ public class DetalleVentaDTO {
     private Integer idDetalleVenta;
     private Producto producto;
     private BigDecimal montoTotal;
-    private LocalDate fechaVenta;
     private DocumentoVenta documentoVenta;
 
     public Integer getIdDetalleVenta() {
@@ -38,14 +37,6 @@ public class DetalleVentaDTO {
 
     public void setMontoTotal(BigDecimal montoTotal) {
         this.montoTotal = montoTotal;
-    }
-
-    public LocalDate getFechaVenta() {
-        return fechaVenta;
-    }
-
-    public void setFechaVenta(LocalDate fechaVenta) {
-        this.fechaVenta = fechaVenta;
     }
 
     public DocumentoVenta getDocumentoVenta() {

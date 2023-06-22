@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.egymbackend.dtos.CitaEntrenadorDTO;
+import pe.edu.upc.egymbackend.dtos.EntrenadorCitaEntrenadorDTO;
 import pe.edu.upc.egymbackend.entities.CitaEntrenador;
 import pe.edu.upc.egymbackend.services.ICitaEntrenadorService;
 
@@ -34,5 +35,11 @@ public class CitaEntrenadorController {
     @DeleteMapping("/{id}")
     public void Eliminar(@PathVariable("id") Integer id){
         ceS.eliminar(id);
+    }
+
+    @GetMapping("/citaEntrenador-count")
+    public List<EntrenadorCitaEntrenadorDTO> getDateTrainerCountByTrainer() {
+        List<EntrenadorCitaEntrenadorDTO> entrenadorCitaEntrenadorDTOS = ceS.reporte01();
+        return entrenadorCitaEntrenadorDTOS;
     }
 }

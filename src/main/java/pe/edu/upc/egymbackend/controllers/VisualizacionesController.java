@@ -2,6 +2,7 @@ package pe.edu.upc.egymbackend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.egymbackend.dtos.CitaNutricionistaDTO;
 import pe.edu.upc.egymbackend.dtos.DetalleVentaDTO;
@@ -19,12 +20,14 @@ public class VisualizacionesController {
     @Autowired
     private IVisualizacionesService vS;
     @PostMapping
+    //@PreAuthorize("hasAuthority('ADMIN')")
     public void registrar(@RequestBody VisualizacionesDTO dto){
         ModelMapper m=new ModelMapper();
         Visualizaciones v=m.map(dto, Visualizaciones.class);
         vS.insertar(v);
     }
     @GetMapping
+    //@PreAuthorize("hasAnyAuthority('ALUMNO','ADMIN')")
     public List<VisualizacionesDTO> listar(){
         return vS.listar().stream().map(x->{
             ModelMapper m=new ModelMapper();

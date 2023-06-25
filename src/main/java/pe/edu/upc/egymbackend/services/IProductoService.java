@@ -1,5 +1,6 @@
 package pe.edu.upc.egymbackend.services;
 
+import pe.edu.upc.egymbackend.dtos.ProductoGeneraMasIngresosDTO;
 import pe.edu.upc.egymbackend.entities.Producto;
 
 import java.util.List;
@@ -9,4 +10,6 @@ public interface IProductoService {
     List<Producto> list();
     public void delete(int idProducto);
     public Producto listId(int idProducto);
+    public List<ProductoGeneraMasIngresosDTO> reporte05();
+
 }

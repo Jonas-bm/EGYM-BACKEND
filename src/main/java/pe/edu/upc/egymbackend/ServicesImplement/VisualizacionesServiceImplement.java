@@ -25,4 +25,9 @@ public class VisualizacionesServiceImplement implements IVisualizacionesService 
     public void eliminar(int idVisualizaciones) {
         vR.deleteById(idVisualizaciones);
     }
+
+    @Override
+    public Visualizaciones listId(int idVisualizaciones) {
+        return vR.findById(idVisualizaciones).orElse(new Visualizaciones());
+    }
 }

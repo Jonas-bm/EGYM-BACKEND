@@ -26,4 +26,9 @@ public class RutinaAsignadaServiceImplement implements IRutinaAsignadaService {
     public void eliminar(int idRutinaAsignada) {
         ruaR.deleteById(idRutinaAsignada);
     }
+
+    @Override
+    public RutinaAsignada listId(int idRutinaAsignada) {
+        return ruaR.findById(idRutinaAsignada).orElse(new RutinaAsignada());
+    }
 }

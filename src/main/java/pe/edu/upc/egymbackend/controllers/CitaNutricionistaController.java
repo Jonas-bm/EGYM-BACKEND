@@ -2,20 +2,25 @@ package pe.edu.upc.egymbackend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.egymbackend.dtos.CitaEntrenadorDTO;
 import pe.edu.upc.egymbackend.dtos.CitaNutricionistaDTO;
+import pe.edu.upc.egymbackend.dtos.CitaxFechaDTO;
+import pe.edu.upc.egymbackend.dtos.NutricionistaCitaNutricionistaDTO;
 import pe.edu.upc.egymbackend.entities.CitaEntrenador;
 import pe.edu.upc.egymbackend.entities.CitaNutricionista;
 import pe.edu.upc.egymbackend.services.ICitaNutricionistaService;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/citaNutricionista")
 public class CitaNutricionistaController {
+    public LocalDate fechaInicio=LocalDate.of(2023,06,24);
     @Autowired
     private ICitaNutricionistaService cnS;
     //@PreAuthorize("hasAuthority('NUTRICIONISTA')")
@@ -48,5 +53,16 @@ public class CitaNutricionistaController {
         ModelMapper m=new ModelMapper();
         CitaNutricionista ciNutr=m.map(dto,CitaNutricionista.class);
         cnS.insertar(ciNutr);
+    }
+    //@PreAuthorize("hasAnyAuthority('ENTRENADOR','NUTRICIONISTA','ALUMNO','ADMIN')")
+    @GetMapping("/citanxn-count")
+    public List<NutricionistaCitaNutricionistaDTO>getContarCitasxNutricionista(){
+        List<NutricionistaCitaNutricionistaDTO> citaNutricionistaDTOS=cnS.reporteBarreto();
+        return citaNutricionistaDTOS;
+    }
+    @GetMapping("/ng")
+    public List<CitaxFechaDTO>getCitasxfecha(){
+        List<CitaxFechaDTO> citaxFechaDTOS=cnS.reporteBarreto2();
+        return citaxFechaDTOS;
     }
 }

@@ -16,7 +16,7 @@ public class CitaEntrenador {
     @ManyToOne
     @JoinColumn(name = "idEntrenador")
     private Entrenador entrenador;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="idAlumno")
     private Alumno alumno;
 

@@ -6,6 +6,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.egymbackend.dtos.CitaEntrenadorDTO;
 import pe.edu.upc.egymbackend.dtos.CitaNutricionistaDTO;
+import pe.edu.upc.egymbackend.dtos.EntrenadorCitaEntrenadorDTO;
 import pe.edu.upc.egymbackend.entities.CitaEntrenador;
 import pe.edu.upc.egymbackend.entities.CitaNutricionista;
 import pe.edu.upc.egymbackend.services.ICitaNutricionistaService;
@@ -37,4 +38,5 @@ public class CitaNutricionistaController {
     public void Eliminar(@PathVariable("id") Integer id) {
         cnS.eliminar(id);
     }
+
 }

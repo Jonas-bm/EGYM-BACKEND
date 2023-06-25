@@ -5,7 +5,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.egymbackend.dtos.EntrenadorCitaEntrenadorDTO;
 import pe.edu.upc.egymbackend.dtos.EntrenadorDTO;
+import pe.edu.upc.egymbackend.dtos.EntrenadorDisponibleDTO;
 import pe.edu.upc.egymbackend.entities.Entrenador;
 import pe.edu.upc.egymbackend.services.IEntrenadorService;
 
@@ -53,4 +55,11 @@ public class EntrenadorController {
         Entrenador e=m.map(dto, Entrenador.class);
         eS.insert(e);
     }
+    @GetMapping("/entrenador-disponible")
+    public List<EntrenadorDisponibleDTO> getEntrenadorDisponible() {
+        List<EntrenadorDisponibleDTO> entrenadorDisponibleDTOS = eS.reporte01();
+        return entrenadorDisponibleDTOS;
+    }
+
+
 }

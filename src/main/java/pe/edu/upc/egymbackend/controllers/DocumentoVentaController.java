@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.egymbackend.dtos.DetalleVentaDTO;
+import pe.edu.upc.egymbackend.dtos.DocVentaDetVentaDTO;
 import pe.edu.upc.egymbackend.dtos.DocumentoVentaDTO;
+import pe.edu.upc.egymbackend.dtos.ProductoAlumnoDTO;
 import pe.edu.upc.egymbackend.entities.DetalleVenta;
 import pe.edu.upc.egymbackend.entities.DocumentoVenta;
 import pe.edu.upc.egymbackend.services.IDocumentoVentaService;
@@ -36,5 +38,10 @@ public class DocumentoVentaController {
     @DeleteMapping("/{id}")
     public void Eliminar(@PathVariable("id") Integer id){
         dvS.eliminar(id);
+    }
+    @GetMapping("/producto-count")
+    public List<ProductoAlumnoDTO> getProductoAlumno() {
+        List<ProductoAlumnoDTO> productoAlumnoDTOS = dvS.reporte01();
+        return productoAlumnoDTOS;
     }
 }

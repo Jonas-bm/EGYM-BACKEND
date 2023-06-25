@@ -42,4 +42,5 @@ public class CitaEntrenadorController {
         List<EntrenadorCitaEntrenadorDTO> entrenadorCitaEntrenadorDTOS = ceS.reporte01();
         return entrenadorCitaEntrenadorDTOS;
     }
+
 }

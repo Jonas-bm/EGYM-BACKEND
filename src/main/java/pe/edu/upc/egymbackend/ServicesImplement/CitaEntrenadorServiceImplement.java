@@ -32,16 +32,18 @@ public class CitaEntrenadorServiceImplement implements ICitaEntrenadorService {
     @Override
     public List<EntrenadorCitaEntrenadorDTO> reporte01() {
         List<String[]> countDateByTrainer = ceR.getCountDateByTrainer();
-        List<EntrenadorCitaEntrenadorDTO> entrenadorCitaEntrenadorDTOSDTOs = new ArrayList<>();
+        List<EntrenadorCitaEntrenadorDTO> entrenadorCitaEntrenadorDTOs = new ArrayList<>();
 
         for (String[] data : countDateByTrainer) {
             EntrenadorCitaEntrenadorDTO dto = new EntrenadorCitaEntrenadorDTO();
             dto.setNameEntrenador(data[0]);
-            dto.setCitaEntrenadorCount(Integer.parseInt(data[1]));
-            entrenadorCitaEntrenadorDTOSDTOs.add(dto);
+            dto.setApellidoPaterno(data[1]);
+            dto.setApellidoMaterno(data[2]);
+            dto.setCitaEntrenadorCount(Integer.parseInt(data[3]));
+            entrenadorCitaEntrenadorDTOs.add(dto);
         }
 
-        return entrenadorCitaEntrenadorDTOSDTOs;
+        return entrenadorCitaEntrenadorDTOs;
     }
 
 }

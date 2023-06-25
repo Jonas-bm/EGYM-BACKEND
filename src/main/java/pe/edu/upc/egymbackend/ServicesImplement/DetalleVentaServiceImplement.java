@@ -14,6 +14,7 @@ import java.util.List;
 public class DetalleVentaServiceImplement implements IDetalleVentaService {
     @Autowired
     private IDetalleVentaRepository dvR;
+
     @Override
     public void insertar(DetalleVenta detalleVenta) {
         dvR.save(detalleVenta);
@@ -44,5 +45,9 @@ public class DetalleVentaServiceImplement implements IDetalleVentaService {
         }
 
         return docVentaDetVentaDTOs;
+    }
+        public DetalleVenta listId (int idDetalleVenta){
+            return dvR.findById(idDetalleVenta).orElse(new DetalleVenta());
+
     }
 }

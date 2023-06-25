@@ -30,6 +30,9 @@ public class CitaEntrenadorServiceImplement implements ICitaEntrenadorService {
     }
 
     @Override
+    public CitaEntrenador listId(int idCitaEntrenador) {
+        return ceR.findById(idCitaEntrenador).orElse(new CitaEntrenador());
+    }
     public List<EntrenadorCitaEntrenadorDTO> reporte01() {
         List<String[]> countDateByTrainer = ceR.getCountDateByTrainer();
         List<EntrenadorCitaEntrenadorDTO> entrenadorCitaEntrenadorDTOs = new ArrayList<>();

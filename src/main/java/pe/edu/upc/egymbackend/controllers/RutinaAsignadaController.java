@@ -4,8 +4,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.egymbackend.dtos.CitaEntrenadorDTO;
 import pe.edu.upc.egymbackend.dtos.RecetaAsignadaDTO;
 import pe.edu.upc.egymbackend.dtos.RutinaAsignadaDTO;
+import pe.edu.upc.egymbackend.entities.CitaEntrenador;
 import pe.edu.upc.egymbackend.entities.RecetaAsignada;
 import pe.edu.upc.egymbackend.entities.RutinaAsignada;
 import pe.edu.upc.egymbackend.services.IRutinaAsignadaService;
@@ -36,5 +38,17 @@ public class RutinaAsignadaController {
     @DeleteMapping("/{id}")
     public void Eliminar(@PathVariable("id") Integer id) {
         ruaS.eliminar(id);
+    }
+    @GetMapping("/{id}")
+    public RutinaAsignadaDTO listId(@PathVariable("id") Integer id){
+        ModelMapper m=new ModelMapper();
+        RutinaAsignadaDTO dto=m.map(ruaS.listId(id),RutinaAsignadaDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void goUpdate(@RequestBody RutinaAsignadaDTO dto){
+        ModelMapper m=new ModelMapper();
+        RutinaAsignada rua=m.map(dto,RutinaAsignada.class);
+        ruaS.insertar(rua);
     }
 }

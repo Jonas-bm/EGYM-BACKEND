@@ -15,4 +15,5 @@ public interface ICitaEntrenadorRepository extends JpaRepository<CitaEntrenador,
             "GROUP BY e.nombre " +
             "ORDER BY COUNT(ce.id_cita) DESC", nativeQuery = true)
     List<String[]> getCountDateByTrainer();
+
 }

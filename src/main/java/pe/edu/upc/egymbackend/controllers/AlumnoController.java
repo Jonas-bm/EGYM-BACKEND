@@ -16,14 +16,14 @@ public class AlumnoController {
     @Autowired
     private IAlumnoService aS;
     @PostMapping
-    //@PreAuthorize("hasAuthority('ALUMNO')")
+    @PreAuthorize("hasAuthority('ALUMNO')")
     public void insert(@RequestBody AlumnoDTO dto){
         ModelMapper m=new ModelMapper();
         Alumno a=m.map(dto,Alumno.class);
         aS.insert(a);
     }
     @GetMapping
-    //@PreAuthorize("hasAnyAuthority('ALUMNO','ENTRENADOR','NUTRICIONISTA','ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ALUMNO','ENTRENADOR','NUTRICIONISTA','ADMIN')")
     public List<AlumnoDTO> list(){
         return aS.list().stream().map(x->{
             ModelMapper m=new ModelMapper();
@@ -31,13 +31,13 @@ public class AlumnoController {
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")
-    //@PreAuthorize("hasAnyAuthority('ALUMNO','ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ALUMNO','ADMIN')")
     public void delete(@PathVariable("id") Integer id){
         aS.delete(id);
     }
 
     @GetMapping("/{id}")
-    //@PreAuthorize("hasAuthority('ALUMNO')")
+    @PreAuthorize("hasAuthority('ALUMNO')")
     public AlumnoDTO lisId(@PathVariable("id") Integer id){
         ModelMapper m=new ModelMapper();
         AlumnoDTO dto=m.map(aS.listId(id),AlumnoDTO.class);
@@ -45,7 +45,7 @@ public class AlumnoController {
     }
 
     @PutMapping
-    //@PreAuthorize("hasAuthority('ALUMNO')")
+    @PreAuthorize("hasAuthority('ALUMNO')")
     public void goUpdate(@RequestBody AlumnoDTO dto){
         ModelMapper m=new ModelMapper();
         Alumno a=m.map(dto,Alumno.class);

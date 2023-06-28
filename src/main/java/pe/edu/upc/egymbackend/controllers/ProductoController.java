@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.egymbackend.dtos.ProductoDTO;
+import pe.edu.upc.egymbackend.dtos.ProductoGeneraMasIngresosDTO;
 import pe.edu.upc.egymbackend.entities.Producto;
 import pe.edu.upc.egymbackend.services.IProductoService;
 
@@ -50,6 +51,12 @@ public class ProductoController {
         ModelMapper m = new ModelMapper();
         Producto a = m.map(dto, Producto.class);
         aS.insert(a);
+    }
+
+    @GetMapping("/producto-ingresos")
+    public List<ProductoGeneraMasIngresosDTO> getProductoMasIngresos() {
+        List<ProductoGeneraMasIngresosDTO> productoIngresos = aS.reporte05();
+        return productoIngresos;
     }
 
 

@@ -14,8 +14,7 @@ public interface IProductoRepository extends JpaRepository<Producto,Integer> {
             "FROM productos p\n" +
             "INNER JOIN detalle_venta dv\n" +
             "ON dv.id_producto = p.id\n" +
-            "GROUP BY p.nombre, dv.fecha_venta\n" +
-            "HAVING EXTRACT(MONTH FROM dv.fecha_Venta) = 5 AND EXTRACT(YEAR FROM dv.fecha_Venta) = 2023\n" +
+            "GROUP BY p.nombre\n" +
             "ORDER BY MONTO DESC\n" +
             "LIMIT 1", nativeQuery = true)
     List<String[]> productoGeneraIngresos();

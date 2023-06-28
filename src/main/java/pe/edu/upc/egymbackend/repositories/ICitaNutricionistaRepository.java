@@ -12,17 +12,23 @@ import java.util.List;
 @Repository
 public interface ICitaNutricionistaRepository extends JpaRepository<CitaNutricionista,Integer> {
 
-    @Query(value="Select n.nombre_nutricionista,n.telefono,count(cn.id_cita_nutricionista) from cita_nutricionista cn\n" +
-            "join nutricionistas n on cn.id_nutricionista=n.id\n" +
-            "group by  n.nombre_nutricionista, n.telefono order by count(n.nombre_nutricionista) DESC",nativeQuery = true)
+    @Query(value="SELECT \n" +
+            "  CONCAT(n.nombre_nutricionista, ' ', n.apellidos_nutricionista) AS nombre_completo_nutricionista,\n" +
+            "  n.telefono,\n" +
+            "  COUNT(cn.id_cita_nutricionista) \n" +
+            "FROM cita_nutricionista cn\n" +
+            "JOIN nutricionistas n ON cn.id_nutricionista = n.id\n" +
+            "JOIN alumnos a ON cn.id_alumno = a.id\n" +
+            "GROUP BY n.nombre_nutricionista, n.apellidos_nutricionista, n.telefono;\n",nativeQuery = true)
     List<String[]>getContarCitasxNutricionista();
 
-    @Query(value = "SELECT n.nombre_nutricionista, COUNT(cn.id_cita_nutricionista) " +
-            "FROM cita_nutricionista cn " +
-            "JOIN nutricionistas n ON cn.id_nutricionista = n.id " +
-            "WHERE cn.fecha=CURRENT_DATE " +
-            "GROUP BY n.nombre_nutricionista " +
-            "ORDER BY COUNT(n.nombre_nutricionista) DESC",
+
+    @Query(value = "SELECT CONCAT(n.nombre_nutricionista, ' ', n.apellidos_nutricionista) AS nombre_completo_nutricionista, COUNT(cn.id_cita_nutricionista)\n" +
+            "FROM cita_nutricionista cn \n" +
+            "JOIN nutricionistas n ON cn.id_nutricionista = n.id \n" +
+            "WHERE cn.fecha = CURRENT_DATE \n" +
+            "GROUP BY n.nombre_nutricionista, n.apellidos_nutricionista \n" +
+            "ORDER BY COUNT(cn.id_cita_nutricionista) DESC;\n",
             nativeQuery = true)
     List<String[]> getCitasxfecha();
 

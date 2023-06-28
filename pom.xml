@@ -11,7 +11,7 @@
     <groupId>pe.edu.upc</groupId>
     <artifactId>EGYM-BACKEND</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>EGYM-BACKEND</name>
     <description>EGYM-BACKEND</description>
     <properties>

@@ -10,15 +10,13 @@ import java.util.List;
 @Repository
 public interface IRutinaAsignadaRepository extends JpaRepository<RutinaAsignada,Integer> {
 
-    @Query(value = "SELECT e.nombre ENTRENADOR, COUNT(ra.id_rutina_asignada) RUTINAS_ASIGNADAS \n" +
+    @Query(value = "SELECT CONCAT(e.nombre, ' ', e.apellido_paterno, ' ', e.apellido_materno) AS nombre_entrenador, COUNT(ra.id_rutina_asignada) AS rutinas_asignadas\n" +
             "FROM rutina_asignada ra\n" +
-            "INNER JOIN cita_entrenador ce\n" +
-            "ON ra.id_cita = ce.id_cita\n" +
-            "INNER JOIN entrenadores e\n" +
-            "ON e.id = ce.id_entrenador\n" +
-            "GROUP BY nombre\n" +
-            "ORDER BY RUTINAS_ASIGNADAS DESC\n" +
-            "LIMIT 3", nativeQuery = true)
+            "INNER JOIN cita_entrenador ce ON ra.id_cita = ce.id_cita\n" +
+            "INNER JOIN entrenadores e ON e.id = ce.id_entrenador\n" +
+            "GROUP BY e.nombre, e.apellido_paterno, e.apellido_materno\n" +
+            "ORDER BY rutinas_asignadas DESC\n" +
+            "LIMIT 3;\n", nativeQuery = true)
     List<String[]> entrenadorMasRutinas();
 
 }
